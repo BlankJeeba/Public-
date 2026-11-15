@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <url>
+    <loc>https://blankjeeba.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/videos" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/hi/videos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/videos" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/videos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/videos" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/about" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/hi/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/about" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/contact" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blankjeeba.com/hi/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blankjeeba.com/contact" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://blankjeeba.com/hi/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blankjeeba.com/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

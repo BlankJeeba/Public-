@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 66" width="64" height="66" role="img" aria-label="BlankJeeba J Symbol">
+  <g
+    fill="none"
+    stroke="#4F46E5"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M43 10V24" />
+    <path d="M43 40V42A14 14 0 0 1 29 56H21" />
+  </g>
+</svg>
