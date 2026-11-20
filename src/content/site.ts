@@ -148,8 +148,8 @@ export const SITE_CONFIG = {
   featuredVideos: [
     { id: 'FI202Yv8Bh0' },
     { id: '8fLK5sGqG1A' },
-    { id: 'GSGk6on0Zs4' },
-    { id: 'WQXNViIcq0o' },
+    { id: '7DAp4haZVCU' },
+    { id: '0vMMCH6Vkn8' },
     { id: 'GEGLV95Ps7w' },
   ] as VideoItem[],
 
