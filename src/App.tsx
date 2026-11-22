@@ -2,7 +2,8 @@ import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { SITE_CONFIG } from './content/site';
-import { LanguageProvider } from './context/LanguageContext';
+import { CUSTOM_PAGES, type PageLayout } from './config/pages';
+import { LanguageProvider, stripHiPrefix } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -32,6 +33,13 @@ function PageFallback() {
 }
 
 function AppRoutes() {
+  const { pathname } = useLocation();
+  const normalizedPath = stripHiPrefix(pathname);
+  const activeCustomPage = CUSTOM_PAGES.find((page) => page.path === normalizedPath);
+  const layout: PageLayout = activeCustomPage ? activeCustomPage.layout : 'full';
+  const showHeader = layout === 'full' || layout === 'header-only';
+  const showFooter = layout === 'full' || layout === 'footer-only';
+
   return (
     <div className="relative flex min-h-screen flex-col bg-[#F8FAFC] text-[#0F172A] dark:bg-[#0A0C14] dark:text-[#F3F4F8] transition-colors duration-200">
       {/* Initial brand splash loading screen (runs once per page load) */}
@@ -44,7 +52,7 @@ function AppRoutes() {
       />
 
       <ScrollToTop />
-      <Header />
+      {showHeader && <Header />}
 
       <main className="flex-1">
         <Suspense fallback={<PageFallback />}>
@@ -95,13 +103,35 @@ function AppRoutes() {
               />
             ))}
 
+            {/* Custom Blank Pages (configured in src/config/pages.ts) */}
+            {CUSTOM_PAGES.map((page) => {
+              const PageComponent = page.component;
+              return (
+                <Route
+                  key={`custom-en-${page.path}`}
+                  path={page.path}
+                  element={<PageComponent />}
+                />
+              );
+            })}
+            {CUSTOM_PAGES.map((page) => {
+              const PageComponent = page.component;
+              return (
+                <Route
+                  key={`custom-hi-${page.path}`}
+                  path={`/hi${page.path}`}
+                  element={<PageComponent />}
+                />
+              );
+            })}
+
             {/* 404 Fallback */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </main>
 
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

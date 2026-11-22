@@ -119,6 +119,9 @@ export default function HomePage() {
                     alt="Jitendra Ahirwar — BlankJeeba"
                     width={460}
                     height={600}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="aspect-[3/4] w-full object-cover object-top"
                   />
                 </motion.div>
@@ -143,6 +146,9 @@ export default function HomePage() {
                     alt="Jitendra Ahirwar outdoor portrait"
                     width={420}
                     height={560}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="aspect-[3/4] w-full object-cover object-top"
                   />
                 </motion.div>

@@ -94,12 +94,12 @@ export const SITE_CONFIG = {
     copyrightYear: 2026,
   },
 
-  /** Uploaded local image paths (stored in /public/assets/aistudio/) */
+  /** Optimized WebP photos (originals preserved in /public/assets/aistudio/) */
   assets: {
-    headerAvatar: '/assets/aistudio/1794411310079_50923635.jpg',
-    heroPrimary: '/assets/aistudio/1794411310217_099f3b84.jpg',
-    heroSecondary: '/assets/aistudio/1794411310176_718edf52.jpg',
-    portfolioPhoto: '/assets/aistudio/1794411310079_50923635.jpg',
+    headerAvatar: '/assets/optimized/avatar.webp',
+    heroPrimary: '/assets/optimized/hero-1.webp',
+    heroSecondary: '/assets/optimized/hero-2.webp',
+    portfolioPhoto: '/assets/optimized/portfolio.webp',
     logoSvg: '/assets/aistudio/BlankJeeba_logo_5893802c.svg',
     footerLogo: '/assets/aistudio/BlankJeeba_logo_5893802c.svg',
     jIcon: '/assets/aistudio/BlankJeeba_icon_ec4022c9.png',
