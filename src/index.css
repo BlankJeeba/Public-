@@ -92,3 +92,34 @@
     animation: none;
   }
 }
+
+/* Scoped flat light/dark palette for the /me browser-style start page */
+.me-browser-theme {
+  --me-bg: #f7f6f2;
+  --me-tabbar: #ebe9e2;
+  --me-surface: #ffffff;
+  --me-border: #dcdad2;
+  --me-text: #1f2030;
+  --me-muted: #6b6c80;
+  --me-accent: #4f46e5;
+}
+
+.me-browser-theme[data-me-theme="dark"] {
+  --me-bg: #14152a;
+  --me-tabbar: #0d0e1d;
+  --me-surface: #1d1f3a;
+  --me-border: #2d3060;
+  --me-text: #ecedff;
+  --me-muted: #9a9cc4;
+  --me-accent: #a5a1ff;
+}
+
+.me-no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.me-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+

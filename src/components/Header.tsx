@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
+import { ChevronDown, Globe, Menu, Moon, Sun, X } from 'lucide-react';
 import { SITE_CONFIG } from '../content/site';
 import { CUSTOM_PAGES } from '../config/pages';
 import { useLanguage } from '../context/LanguageContext';
@@ -54,12 +54,12 @@ export function Header() {
       ref={headerRef}
       className="sticky top-0 z-40 border-b border-slate-900/10 bg-[#F8FAFC]/85 backdrop-blur-xl dark:border-white/[0.08] dark:bg-[#0A0C14]/80 transition-colors duration-200"
     >
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:gap-8 sm:px-6">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-3.5 sm:gap-8 sm:px-6">
         {/* Zone 1: Personal profile picture (preserved) + theme-aware BlankJeeba wordmark */}
         <Link
           to={localePath('/')}
           onClick={closeMenu}
-          className="group flex shrink-0 items-center gap-3 whitespace-nowrap"
+          className="group flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-3"
           aria-label="BlankJeeba Home"
         >
           <img
@@ -108,14 +108,14 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Zone 3: Theme switcher + Language switch (EN | हिं) + Hamburger menu button */}
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        {/* Zone 3: Theme switcher + Language switch (EN | हिं) + My Browser (/me) + Hamburger menu button */}
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
           <button
             type="button"
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
-            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-slate-900/10 bg-white text-[#475569] transition-colors hover:border-[#4F46E5]/40 hover:text-[#0F172A] dark:border-white/[0.08] dark:bg-[#11141F] dark:text-[#9AA0B4] dark:hover:border-white/20 dark:hover:text-[#F3F4F8]"
+            className="inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-slate-900/10 bg-white text-[#475569] transition-colors hover:border-[#4F46E5]/40 hover:text-[#0F172A] dark:border-white/[0.08] dark:bg-[#11141F] dark:text-[#9AA0B4] dark:hover:border-white/20 dark:hover:text-[#F3F4F8]"
           >
             {theme === 'dark' ? (
               <Sun className="h-4 w-4" />
@@ -127,13 +127,13 @@ export function Header() {
           <div
             role="group"
             aria-label="Language switch"
-            className="inline-flex items-center rounded-lg border border-slate-900/10 bg-white p-0.5 text-xs font-medium dark:border-white/[0.08] dark:bg-[#11141F]"
+            className="inline-flex shrink-0 items-center rounded-lg border border-slate-900/10 bg-white p-0.5 text-xs font-medium dark:border-white/[0.08] dark:bg-[#11141F]"
           >
             <button
               type="button"
               onClick={() => switchLanguage('en')}
               aria-pressed={lang === 'en'}
-              className={`whitespace-nowrap shrink-0 cursor-pointer rounded-md px-2.5 py-1 transition-colors duration-150 ${
+              className={`whitespace-nowrap shrink-0 cursor-pointer rounded-md px-2 py-1 transition-colors duration-150 sm:px-2.5 ${
                 lang === 'en'
                   ? 'bg-[#4F46E5] text-white'
                   : 'text-[#475569] hover:text-[#0F172A] dark:text-[#9AA0B4] dark:hover:text-[#F3F4F8]'
@@ -145,7 +145,7 @@ export function Header() {
               type="button"
               onClick={() => switchLanguage('hi')}
               aria-pressed={lang === 'hi'}
-              className={`whitespace-nowrap shrink-0 cursor-pointer rounded-md px-2.5 py-1 transition-colors duration-150 ${
+              className={`whitespace-nowrap shrink-0 cursor-pointer rounded-md px-2 py-1 transition-colors duration-150 sm:px-2.5 ${
                 lang === 'hi'
                   ? 'bg-[#4F46E5] text-white'
                   : 'text-[#475569] hover:text-[#0F172A] dark:text-[#9AA0B4] dark:hover:text-[#F3F4F8]'
@@ -154,6 +154,22 @@ export function Header() {
               हिं
             </button>
           </div>
+
+          <Link
+            to="/me"
+            onClick={closeMenu}
+            aria-label="My Browser"
+            title="My Browser"
+            className="group relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-900/10 bg-white text-[#475569] transition-colors hover:border-[#4F46E5]/40 hover:text-[#0F172A] dark:border-white/[0.08] dark:bg-[#11141F] dark:text-[#9AA0B4] dark:hover:border-white/20 dark:hover:text-[#F3F4F8]"
+          >
+            <Globe className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute top-[calc(100%+8px)] left-1/2 hidden -translate-x-1/2 whitespace-nowrap rounded-md border border-slate-900/10 bg-[#0F172A] px-2.5 py-1 text-xs font-medium text-white opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100 dark:border-white/10 dark:bg-[#171B2B] dark:text-[#F3F4F8] md:block"
+            >
+              My Browser
+            </span>
+          </Link>
 
           <button
             type="button"
@@ -166,7 +182,7 @@ export function Header() {
             }}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-slate-900/10 bg-white text-[#0F172A] transition-colors hover:border-slate-900/20 dark:border-white/[0.08] dark:bg-[#11141F] dark:text-[#F3F4F8] dark:hover:border-white/20 md:h-9 md:w-9"
+            className="inline-flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-slate-900/10 bg-white text-[#0F172A] transition-colors hover:border-slate-900/20 dark:border-white/[0.08] dark:bg-[#11141F] dark:text-[#F3F4F8] dark:hover:border-white/20 md:h-9 md:w-9"
           >
             {mobileOpen ? <X className="h-5 w-5 md:h-4 md:w-4" /> : <Menu className="h-5 w-5 md:h-4 md:w-4" />}
           </button>

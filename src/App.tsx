@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { SITE_CONFIG } from './content/site';
 import { CUSTOM_PAGES, type PageLayout } from './config/pages';
@@ -124,6 +124,10 @@ function AppRoutes() {
                 />
               );
             })}
+
+            {/* Redirect legacy /page6 address to /me */}
+            <Route path="/page6" element={<Navigate to="/me" replace />} />
+            <Route path="/hi/page6" element={<Navigate to="/me" replace />} />
 
             {/* 404 Fallback */}
             <Route path="*" element={<NotFoundPage />} />

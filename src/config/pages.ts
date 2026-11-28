@@ -59,8 +59,8 @@ export const CUSTOM_PAGES: CustomPageConfig[] = [
     component: lazy(() => import('../pages/Page5')),
   },
   {
-    path: '/page6',
-    title: 'Page 6',
+    path: '/me',
+    title: 'Me',
     layout: 'none',
     component: lazy(() => import('../pages/Page6')),
   },
